@@ -232,15 +232,24 @@ class WebDriver extends \Codeception\Module implements WebInterface, RemoteInter
      *
      * @param $name
      */
-    public function makeScreenshot($name)
+    public function makeScreenshot($name, $dir = '')
     {
         $debugDir = codecept_log_dir() . 'debug';
         if (!is_dir($debugDir)) {
             mkdir($debugDir, 0777);
         }
+        if ($dir != '') {
+            $debugDir = $debugDir . DIRECTORY_SEPARATOR . $dir;
+            if (!is_dir($debugDir)) {
+                mkdir($debugDir, 0777);
+            }
+        }
         $screenName = $debugDir . DIRECTORY_SEPARATOR . $name . '.png';
+        $htmlName = $debugDir . DIRECTORY_SEPARATOR . $name . '.html';
         $this->_saveScreenshot($screenName);
         $this->debug("Screenshot saved to $screenName");
+        file_put_contents($htmlName, $this->webDriver->getPageSource());
+        $this->debug("html saved to $htmlName");
     }
 
     /**
