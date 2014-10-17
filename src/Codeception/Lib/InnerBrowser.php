@@ -798,6 +798,11 @@ class InnerBrowser extends Module implements Web
         $this->assertDomContains($nodes, $selector);
     }
 
+    public function countElements($selector)
+    {
+        return count($this->match($selector));
+    }
+
     public function dontSeeElement($selector, $attributes = array())
     {
         $nodes = $this->match($selector);

@@ -1808,4 +1808,17 @@ class WebDriver extends \Codeception\Module implements WebInterface, RemoteInter
         }
         throw new \Exception("Only CSS or XPath allowed");
     }
+
+    /**
+     * Returns the count of matching elements on a page.
+     *
+     * @param $selector
+     */
+    public function countElements($selector)
+    {
+        $els = array_filter($this->match($this->webDriver, $selector), function(\WebDriverElement $el) {
+            return $el->isDisplayed();
+        });
+        return count($els);
+    }
 }
