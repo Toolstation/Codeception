@@ -12,7 +12,7 @@ Returns absolute path to output directory (`tests/_output`)
   
 #### codecept_root_dir()
  
-Returns absolute path to the root directory (where `codeception.yml` is located)
+Returns absolute path to the root directory (where `codeception.yaml` is located)
  
 #### codecept_data_dir()
  

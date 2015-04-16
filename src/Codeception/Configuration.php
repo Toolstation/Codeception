@@ -18,7 +18,7 @@ class Configuration
 
     /**
      * @var string Directory containing main configuration file.
-     * @see self::projectDir() 
+     * @see self::projectDir()
      */
     protected static $dir = null;
 
@@ -82,7 +82,7 @@ class Configuration
     );
 
     /**
-     * Loads global config file which is `codeception.yml` by default.
+     * Loads global config file which is `codeception.yaml` by default.
      * When config is already loaded - returns it.
      *
      * @param null $configFile
@@ -100,16 +100,16 @@ class Configuration
         }
 
         if ($configFile === null) {
-            $configFile = getcwd() . DIRECTORY_SEPARATOR . 'codeception.yml';
+            $configFile = getcwd() . DIRECTORY_SEPARATOR . 'codeception.yaml';
         }
 
         if (is_dir($configFile)) {
-            $configFile = $configFile . DIRECTORY_SEPARATOR . 'codeception.yml';
+            $configFile = $configFile . DIRECTORY_SEPARATOR . 'codeception.yaml';
         }
 
         $dir = realpath(dirname($configFile));
 
-        $configDistFile = $dir . DIRECTORY_SEPARATOR . 'codeception.dist.yml';
+        $configDistFile = $dir . DIRECTORY_SEPARATOR . 'codeception.dist.yaml';
 
         if (! (file_exists($configDistFile) || file_exists($configFile))) {
             throw new ConfigurationException("Configuration file could not be found.\nRun `bootstrap` to initialize Codeception.");
@@ -183,11 +183,11 @@ class Configuration
 
     protected static function loadSuites()
     {
-        $suites = Finder::create()->files()->name('*.{suite,suite.dist}.yml')->in(self::$dir.DIRECTORY_SEPARATOR.self::$testsDir)->depth('< 1');
+        $suites = Finder::create()->files()->name('*.{suite,suite.dist}.yaml')->in(self::$dir.DIRECTORY_SEPARATOR.self::$testsDir)->depth('< 1');
         self::$suites = array();
 
         foreach ($suites as $suite) {
-            preg_match('~(.*?)(\.suite|\.suite\.dist)\.yml~', $suite->getFilename(), $matches);
+            preg_match('~(.*?)(\.suite|\.suite\.dist)\.yaml~', $suite->getFilename(), $matches);
             self::$suites[$matches[1]] = $matches[1];
         }
     }
@@ -221,8 +221,8 @@ class Configuration
 
         $path = $config['paths']['tests'];
 
-        $suiteConf = file_exists(self::$dir . DIRECTORY_SEPARATOR . $path . DIRECTORY_SEPARATOR . "$suite.suite.yml") ? Yaml::parse(self::$dir . DIRECTORY_SEPARATOR . $path . DIRECTORY_SEPARATOR . "$suite.suite.yml") : array();
-        $suiteDistconf = file_exists(self::$dir . DIRECTORY_SEPARATOR . $path . DIRECTORY_SEPARATOR . "$suite.suite.dist.yml") ? Yaml::parse(self::$dir . DIRECTORY_SEPARATOR . $path . DIRECTORY_SEPARATOR . "$suite.suite.dist.yml") : array();
+        $suiteConf = file_exists(self::$dir . DIRECTORY_SEPARATOR . $path . DIRECTORY_SEPARATOR . "$suite.suite.yaml") ? Yaml::parse(self::$dir . DIRECTORY_SEPARATOR . $path . DIRECTORY_SEPARATOR . "$suite.suite.yaml") : array();
+        $suiteDistconf = file_exists(self::$dir . DIRECTORY_SEPARATOR . $path . DIRECTORY_SEPARATOR . "$suite.suite.dist.yaml") ? Yaml::parse(self::$dir . DIRECTORY_SEPARATOR . $path . DIRECTORY_SEPARATOR . "$suite.suite.dist.yaml") : array();
 
         $settings = self::mergeConfigs(self::$defaultSuiteSettings, $globalConf);
         $settings = self::mergeConfigs($settings, $suiteDistconf);
@@ -266,7 +266,7 @@ class Configuration
     /**
      * Return instances of enabled modules according suite config.
      * Requires Guy class if it exists.
-     * 
+     *
      * @param array $settings suite settings
      * @return array|\Codeception\Module[]
      */
@@ -421,7 +421,7 @@ class Configuration
 
     /**
      * Returns path to the root of your project.
-     * Basically returns path to current `codeception.yml` loaded.
+     * Basically returns path to current `codeception.yaml` loaded.
      * Use this method instead of `__DIR__`, `getcwd()` or anything else.
      * @return string
      */
@@ -441,7 +441,7 @@ class Configuration
     }
 
     /**
-     * Is this a meta-configuration file that just points to other `codeception.yml`?
+     * Is this a meta-configuration file that just points to other `codeception.yaml`?
      * If so, it may have no tests by itself.
      *
      * @return bool

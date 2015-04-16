@@ -7,7 +7,7 @@ In this chapter we will explain how you can extend and customize file structure 
 In case your project consists of several applications (frontend, admin, api) or you use Symfony2 framework with its bundles, you may be interested in having all tests for all applications (bundles) to be executed in one runner.
 In this case you will get one report that covers the whole project.
 
-Place `codeception.yml` file into root folder of your project and specify paths to other `codeception.yml` configs you want to include.
+Place `codeception.yaml` file into root folder of your project and specify paths to other `codeception.yaml` configs you want to include.
 
 ``` yaml
 include:
@@ -31,7 +31,7 @@ To create test suites with namespaces you can add `--namespace` option to bootst
 $ php codecept.phar bootstrap --namespace frontend
 ```
 
-This will bootstrap a new project with `namespace: frontend` parameter in `codeception.yml` file. 
+This will bootstrap a new project with `namespace: frontend` parameter in `codeception.yaml` file. 
 Helpers will be in `frontend\Codeception\Module` namespace and Actor classes will be in `frontend` namespace.
 Thus, newly generated tests will look like this:
 
@@ -175,7 +175,7 @@ include_once '/path/to/my/MyCustomExtension.php';
 ?>
 ```
 
-Then you can enable it in `codeception.yml`:
+Then you can enable it in `codeception.yaml`:
 
 ```yaml
 extensions:
@@ -187,7 +187,7 @@ extensions:
 
 In extension you can access currently passed options via `options` property.
 You also can access global config via `\Codeception\Configuration::config()` method. 
-But if you want to have custom options for your extension, you can pass them in `codeception.yml` file:
+But if you want to have custom options for your extension, you can pass them in `codeception.yaml` file:
 
 ```yaml
 extensions:
@@ -253,7 +253,7 @@ class AdminGroup extends \Codeception\Platform\Group
 A group class can be created with `php codecept.phar generate:group groupname` command.
 Group class will be stored in `tests/_groups` directory.
 
-A group class can be enabled just like you enable extension class. In file `codeception.yml`:
+A group class can be enabled just like you enable extension class. In file `codeception.yaml`:
 
 ``` yaml
 extensions:

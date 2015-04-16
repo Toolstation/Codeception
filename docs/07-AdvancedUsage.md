@@ -156,7 +156,7 @@ To create a project in directory different from the current one, just provide it
 $ php codecept.phar bootstrap ~/projects/drupal/
 ```
 
-Basically `-c` option allows you to specify not only the path, but a config file to be used. Thus, you can have several `codeception.yml` files for your test suite. You may use it to specify different environments and settings. Just pass a filename into `-c` parameter to execute tests with specific config settings.
+Basically `-c` option allows you to specify not only the path, but a config file to be used. Thus, you can have several `codeception.yaml` files for your test suite. You may use it to specify different environments and settings. Just pass a filename into `-c` parameter to execute tests with specific config settings.
 
 ## Groups
 
@@ -462,7 +462,7 @@ The most typical use cases are running acceptance tests in different browsers, o
 
 Let's demonstrate usage of environments for the browsers case.
 
-We need to add new lines to `acceptance.suite.yml`:
+We need to add new lines to `acceptance.suite.yaml`:
 
 ``` yaml
 class_name: AcceptanceTester

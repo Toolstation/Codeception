@@ -30,7 +30,7 @@ If test fails stores last shown page in 'output' dir.
 * .. those and other [Guzzle Request options](http://docs.guzzlephp.org/en/latest/clients.html#request-options)
 
 
-### Example (`acceptance.suite.yml`)
+### Example (`acceptance.suite.yaml`)
 
     modules:
        enabled: [PhpBrowser]

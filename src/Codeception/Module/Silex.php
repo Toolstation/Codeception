@@ -36,7 +36,7 @@ use Codeception\Lib\InnerBrowser;
  * ?>
  * ```
  *
- * ### Example (`functional.suite.yml`)
+ * ### Example (`functional.suite.yaml`)
  *
  *     modules:
  *        enabled: [Silex]
@@ -97,4 +97,4 @@ class Silex extends InnerBrowser
         return $this->app[$service];
     }
 
-} 
+}

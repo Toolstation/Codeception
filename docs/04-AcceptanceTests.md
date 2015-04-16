@@ -52,7 +52,7 @@ Common PhpBrowser drawbacks:
 * you can't fill fields that are not inside a form
 * you can't work with JavaScript interactions: modal windows, datepickers, etc.
 
-Before we start we need a local copy of the site running on your host. We need to specify the `url` parameter in the acceptance suite config (tests/acceptance.suite.yml).
+Before we start we need a local copy of the site running on your host. We need to specify the `url` parameter in the acceptance suite config (tests/acceptance.suite.yaml).
 
 ``` yaml
 class_name: AcceptanceTester
@@ -353,7 +353,7 @@ Your PhpBrowser tests we wrote previously can be executed inside a real browser 
 
 The only thing we need to change is to reconfigure and rebuild the AcceptanceTester class, to use **WebDriver** instead of PhpBrowser.
 
-Modify your `acceptance.suite.yml` file:
+Modify your `acceptance.suite.yaml` file:
 
 ```yaml
 class_name: AcceptanceTester
@@ -425,7 +425,7 @@ In this case we did some actions in second window with `does` command on a frien
 While testing, your actions may change the data on the site. Tests will fail if trying to create or update the same data twice. To avoid this problem, your database should be repopulated for each test. Codeception provides a `Db` module for that purpose. It will load a database dump after each passed test. To make repopulation work, create an sql dump of your database and put it into the __/tests/_data__ directory. Set the database connection and path to the dump in the global Codeception config.
 
 ```yaml
-# in codeception.yml:
+# in codeception.yaml:
 modules:
     config:
         Db:

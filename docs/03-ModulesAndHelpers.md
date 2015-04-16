@@ -20,7 +20,7 @@ $I->seeFileFound('running.lock');
 It can operate with different entities: the web page can be loaded with the PhpBrowser module, the database assertion uses the Db module, and file state can be checked with the Filesystem module. 
 
 Modules are attached to Actor classes in the suite config.
-For example, in `tests/functional.suite.yml` we should see.
+For example, in `tests/functional.suite.yaml` we should see.
 
 ```yaml
 class_name: FunctionalTester
@@ -152,8 +152,8 @@ For example:
 function seeConfigFilesCreated()
 {
     $filesystem = $this->getModule('Filesystem');
-    $filesystem->seeFileFound('codeception.yml');
-    $filesystem->openFile('codeception.yml');
+    $filesystem->seeFileFound('codeception.yaml');
+    $filesystem->openFile('codeception.yaml');
     $filesystem->seeInFile('paths');
 }
 ?>
@@ -241,7 +241,7 @@ I click "All pages"
 
 ### Configuration
 
-Modules can be configured from the suite config file, or globally from `codeception.yml`.
+Modules can be configured from the suite config file, or globally from `codeception.yaml`.
 Mandatory parameters should be defined in the `$requiredFields` property of the module class. Here is how it is done in the Db module:
 
 ```php

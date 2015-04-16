@@ -52,8 +52,8 @@ class GenerateSuite extends Command
         $config['class_name'] = $actor;
 
         $dir = \Codeception\Configuration::testsDir();
-        if (file_exists($dir . $suite . '.suite.yml')) {
-            throw new \Exception("Suite configuration file '$suite.suite.yml' already exists.");
+        if (file_exists($dir . $suite . '.suite.yaml')) {
+            throw new \Exception("Suite configuration file '$suite.suite.yaml' already exists.");
         }
 
         $this->buildPath($dir . $suite . DIRECTORY_SEPARATOR, '_bootstrap.php');
@@ -78,7 +78,7 @@ class GenerateSuite extends Command
             ),
         );
 
-        $this->save($dir . $suite . '.suite.yml', Yaml::dump($conf, 2));
+        $this->save($dir . $suite . '.suite.yaml', Yaml::dump($conf, 2));
 
         $output->writeln("<info>Suite $suite generated</info>");
     }

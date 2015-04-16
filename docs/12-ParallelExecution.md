@@ -156,7 +156,7 @@ $ robo parallel:split-groups
  [Codeception\Task\SplitTestFilesByGroupsTask] Writing tests/_log/p5
 ```
 
-Now we have group files. We should update `codeception.yml` to load generated group files. In our case we have groups: *p1*, *p2*, *p3*, *p4*, *p5*.
+Now we have group files. We should update `codeception.yaml` to load generated group files. In our case we have groups: *p1*, *p2*, *p3*, *p4*, *p5*.
 
 ```yaml
 groups:
@@ -190,7 +190,7 @@ As it was mentioned, Robo has `ParallelExec` task to spawn background processes.
 ?>    
 ```
 
-We missed something really important. We forgot to define different databases for different processes. This can be done using [Environments](http://codeception.com/docs/07-AdvancedUsage#Environments). Let's define 5 new environments in `acceptance.suite.yml`:
+We missed something really important. We forgot to define different databases for different processes. This can be done using [Environments](http://codeception.com/docs/07-AdvancedUsage#Environments). Let's define 5 new environments in `acceptance.suite.yaml`:
 
 ```yaml
 class_name: AcceptanceTester

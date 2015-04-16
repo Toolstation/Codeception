@@ -24,7 +24,7 @@ This module uses Symfony2 Crawler and HttpKernel to emulate requests and test re
 * debug: true - turn on/off debug mode
 
 
-### Example (`functional.suite.yml`) - Symfony 2.x Directory Structure
+### Example (`functional.suite.yaml`) - Symfony 2.x Directory Structure
 
     modules: 
        enabled: [Symfony2]
@@ -40,7 +40,7 @@ This module uses Symfony2 Crawler and HttpKernel to emulate requests and test re
 * environment: 'local' - environment used for load kernel
 * debug: true - turn on/off debug mode
 
-### Example (`functional.suite.yml`) - Symfony 3 Directory Structure
+### Example (`functional.suite.yaml`) - Symfony 3 Directory Structure
 
     modules:
        enabled: [Symfony2]

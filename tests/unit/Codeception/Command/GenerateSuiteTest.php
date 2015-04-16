@@ -11,7 +11,7 @@ class GenerateSuiteTest extends BaseCommandRunner {
     public function testBasic()
     {
         $this->execute(array('suite' => 'shire', 'actor' => 'Hobbit'));
-        $this->assertEquals(\Codeception\Configuration::projectDir().'tests/shire.suite.yml',$this->filename);
+        $this->assertEquals(\Codeception\Configuration::projectDir().'tests/shire.suite.yaml',$this->filename);
         $conf = \Symfony\Component\Yaml\Yaml::parse($this->content);
         $this->assertEquals('HobbitGuy',$conf['class_name']);
         $this->assertContains('HobbitHelper',$conf['modules']['enabled']);

@@ -28,11 +28,11 @@ use Codeception\Lib\Connector\Symfony2 as Symfony2Connector;
  * * app_path: 'app' - specify custom path to your app dir, where bootstrap cache and kernel interface is located.
  * * environment: 'local' - environment used for load kernel
  * * debug: true - turn on/off debug mode
- * 
  *
- * ### Example (`functional.suite.yml`) - Symfony 2.x Directory Structure
  *
- *     modules: 
+ * ### Example (`functional.suite.yaml`) - Symfony 2.x Directory Structure
+ *
+ *     modules:
  *        enabled: [Symfony2]
  *        config:
  *           Symfony2:
@@ -46,7 +46,7 @@ use Codeception\Lib\Connector\Symfony2 as Symfony2Connector;
  * * environment: 'local' - environment used for load kernel
  * * debug: true - turn on/off debug mode
  *
- * ### Example (`functional.suite.yml`) - Symfony 3 Directory Structure
+ * ### Example (`functional.suite.yaml`) - Symfony 3 Directory Structure
  *
  *     modules:
  *        enabled: [Symfony2]
@@ -78,7 +78,7 @@ class Symfony2 extends \Codeception\Lib\Framework
     public $container;
 
     public $config = array('app_path' => 'app', 'var_path' => 'app', 'environment' => 'test', 'debug' => true);
-    
+
     /**
      * @var
      */

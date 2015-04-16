@@ -32,7 +32,7 @@ return $app; // optionally
 ?>
 ```
 
-### Example (`functional.suite.yml`)
+### Example (`functional.suite.yaml`)
 
     modules:
        enabled: [Silex]

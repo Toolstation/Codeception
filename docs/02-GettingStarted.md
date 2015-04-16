@@ -51,7 +51,7 @@ $I->see('Hello, davert');
 ?>
 ```
 
-Before we execute this test, we should make sure that the site is running on a local web server. Let's open the `tests/acceptance.suite.yml` file and replace the URL with the URL of your web application:
+Before we execute this test, we should make sure that the site is running on a local web server. Let's open the `tests/acceptance.suite.yaml` file and replace the URL with the URL of your web application:
 
 ``` yaml
 config:
@@ -127,7 +127,7 @@ Codeception supports three test formats. Besides the previously described scenar
 
 ## Configuration
 
-Codeception has a global configuration in `codeception.yml` and a config for each suite. We also support `.dist` configuration files. If you have several developers in a project, put shared settings into `codeception.dist.yml` and personal settings into `codeception.yml`. Same goes for suite configs. For example, the `unit.suite.yml` will be merged with `unit.suite.dist.yml`. 
+Codeception has a global configuration in `codeception.yaml` and a config for each suite. We also support `.dist` configuration files. If you have several developers in a project, put shared settings into `codeception.dist.yaml` and personal settings into `codeception.yaml`. Same goes for suite configs. For example, the `unit.suite.yaml` will be merged with `unit.suite.dist.yaml`. 
 
 
 ## Running Tests

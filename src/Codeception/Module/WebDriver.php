@@ -49,7 +49,7 @@ use Codeception\PHPUnit\Constraint\Page as PageConstraint;
  * * wait - set the implicit wait (0 secs) by default.
  * * capabilities - sets Selenium2 [desired capabilities](http://code.google.com/p/selenium/wiki/DesiredCapabilities). Should be a key-value array.
  *
- * ### Example (`acceptance.suite.yml`)
+ * ### Example (`acceptance.suite.yaml`)
  *
  *     modules:
  *        enabled: [WebDriver]
@@ -61,7 +61,7 @@ use Codeception\PHPUnit\Constraint\Page as PageConstraint;
  *              wait: 10
  *              capabilities:
  *                  unexpectedAlertBehaviour: 'accept'
- *                  firefox_profile: '/Users/paul/Library/Application Support/Firefox/Profiles/codeception-profile.zip.b64' 
+ *                  firefox_profile: '/Users/paul/Library/Application Support/Firefox/Profiles/codeception-profile.zip.b64'
  *
  * ## Migration Guide (Selenium2 -> WebDriver)
  *
@@ -571,7 +571,7 @@ class WebDriver extends \Codeception\Module implements WebInterface, RemoteInter
     public function grabFromCurrentUrl($uri = null)
     {
         if (!$uri) {
-            return $this->_getCurrentUri();
+            return $this->webDriver->getCurrentURL();
         }
         $matches = array();
         $res = preg_match($uri, $this->_getCurrentUri(), $matches);

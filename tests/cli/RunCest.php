@@ -76,7 +76,7 @@ class RunCest
     public function runXmlReportsInStrictMode(\CliGuy $I)
     {
         $I->wantTo('check xml in strict mode');
-        $I->executeCommand('run dummy --xml -c codeception_strict_xml.yml');
+        $I->executeCommand('run dummy --xml -c codeception_strict_xml.yaml');
         $I->seeFileFound('report.xml', 'tests/_log');
         $I->seeInThisFile('<?xml');
         $I->seeInThisFile('<testsuite name="dummy"');

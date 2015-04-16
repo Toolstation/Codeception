@@ -32,7 +32,7 @@ use Yii;
  * );
  * </pre>
  *
- * You can use this module by setting params in your functional.suite.yml:
+ * You can use this module by setting params in your functional.suite.yaml:
  * <pre>
  * class_name: TestGuy
  * modules:
@@ -65,7 +65,7 @@ use Yii;
  * </pre>
  * Then run codeception: php codecept.phar --steps run functional
  * You must see "OK" and that all steps are marked with asterisk (*).
- * Do not forget that after adding module in your functional.suite.yml you must run codeception "build" command.
+ * Do not forget that after adding module in your functional.suite.yaml you must run codeception "build" command.
  *
  * @property Codeception\Lib\Connector\Yii1 $client
  */

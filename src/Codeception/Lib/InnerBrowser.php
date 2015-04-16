@@ -803,6 +803,11 @@ class InnerBrowser extends Module implements Web
         return count($this->match($selector));
     }
 
+    public function getElements($selector)
+    {
+        return $this->match($selector);
+    }
+
     public function dontSeeElement($selector, $attributes = array())
     {
         $nodes = $this->match($selector);
@@ -812,7 +817,7 @@ class InnerBrowser extends Module implements Web
         }
         $this->assertDomNotContains($nodes, $selector);
     }
-    
+
     public function seeNumberOfElements($selector, $expected)
     {
         $counted = count($this->match($selector));
@@ -824,7 +829,7 @@ class InnerBrowser extends Module implements Web
             $this->assertEquals($expected, $counted,
                     'Number of elements counted differs from expected number' );
         }
-    }    
+    }
 
     public function seeOptionIsSelected($select, $optionText)
     {

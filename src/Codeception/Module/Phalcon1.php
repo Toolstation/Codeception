@@ -35,7 +35,7 @@ use Codeception\LIb\Connector\PhalconMemorySession;
  * ?>
  * ```
  *
- * You can use this module by setting params in your functional.suite.yml:
+ * You can use this module by setting params in your functional.suite.yaml:
  * <pre>
  * class_name: TestGuy
  * modules:
@@ -208,7 +208,7 @@ class Phalcon1 extends Framework implements ActiveRecord
             $this->fail("Record $model was not saved. Messages: ".implode(', ', $record->getMessages()));
         }
         $this->debugSection($model, json_encode($record));
-        
+
         $reflectedProperty =   new \ReflectionProperty(get_class($record), 'id');
         $reflectedProperty->setAccessible(true);
         return $reflectedProperty->getValue($record);

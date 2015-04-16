@@ -46,7 +46,7 @@ modules:
             dump: tests/_data/dump.sql
 ```
 
-Suite configuration acceptance.yml
+Suite configuration acceptance.yaml
 
 ```yaml
 class_name: AcceptanceTester

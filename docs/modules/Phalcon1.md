@@ -30,7 +30,7 @@ return new \Phalcon\Mvc\Application($di);
 ?>
 ```
 
-You can use this module by setting params in your functional.suite.yml:
+You can use this module by setting params in your functional.suite.yaml:
 <pre>
 class_name: TestGuy
 modules:

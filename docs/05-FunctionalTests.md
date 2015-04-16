@@ -43,14 +43,14 @@ Keep your memory clean, avoid memory leaks and clean global and static variables
 ## Enabling Framework Modules
 
 You have a functional testing suite in `tests/functional` dir.
-To start you need to include one of the framework modules in suite config file: `tests/functional.suite.yml`. Below we provide simplified instructions for setting up functional tests with the most popular PHP frameworks.
+To start you need to include one of the framework modules in suite config file: `tests/functional.suite.yaml`. Below we provide simplified instructions for setting up functional tests with the most popular PHP frameworks.
 
 ### Symfony2
 
 To perform Symfony2 integrations you don't need to install any bundles or do any configuration changes.
 You just need to include the `Symfony2` module into your test suite. If you also use Doctrine2, don't forget to include it too.
 
-Example of `functional.suite.yml`
+Example of `functional.suite.yaml`
 
 ```yaml
 class_name: FunctionalTester
@@ -109,7 +109,7 @@ modules:
 The module for Zend Framework is highly inspired by ControllerTestCase class, used for functional testing with PHPUnit. 
 It follows similar approaches for bootstrapping and cleaning up. To start using Zend Framework in your functional tests, include the `ZF1` module.
 
-Example of `functional.suite.yml`
+Example of `functional.suite.yaml`
 
 ```yaml
 class_name: FunctionalTester
@@ -223,7 +223,7 @@ modules:
 error_level: "E_ALL & ~E_STRICT & ~E_DEPRECATED"
 ```
 
-`error_level` can be set globally in `codeception.yml` file.
+`error_level` can be set globally in `codeception.yaml` file.
 
 
 ## Conclusion

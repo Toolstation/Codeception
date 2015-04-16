@@ -26,8 +26,8 @@ namespace Codeception\Module;
  * * auto_connect: true - tries to get EntityManager through connected frameworks. If none found expects the $em values specified as described above.
  * * cleanup: true - all doctrine queries will be run in transaction, which will be rolled back at the end of test.
  *
- *  ### Example (`functional.suite.yml`)
- * 
+ *  ### Example (`functional.suite.yaml`)
+ *
  *      modules:
  *         enabled: [Doctrine2]
  *         config:
@@ -44,7 +44,7 @@ class Doctrine2 extends \Codeception\Module
      * @var \Doctrine\ORM\EntityManager
      */
     public static $em = null;
-    
+
     public function _before(\Codeception\TestCase $test)
     {
         // trying to connect to Symfony2 and get event manager

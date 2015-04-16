@@ -16,7 +16,7 @@ use Codeception\Lib\Interfaces\ActiveRecord;
  *
  * The entry script must return the application configuration array.
  *
- * You can use this module by setting params in your functional.suite.yml:
+ * You can use this module by setting params in your functional.suite.yaml:
  * <pre>
  * class_name: TestGuy
  * modules:
@@ -191,7 +191,7 @@ class Yii2 extends Framework implements ActiveRecord
      *  $I->amOnPage('http://localhost/index-test.php?site/index');
      */
     public function amOnPage($page) {
-                
+
         if(is_array($page)){
             $page = \Yii::$app->getUrlManager()->createUrl($page);
         }

@@ -14,7 +14,7 @@ or locally but running through web server. It may look hard to collect code cove
 
 ### Configuration
 
-To enable codecoverge put these lines in the global configuration file `codeception.yml`:
+To enable codecoverge put these lines in the global configuration file `codeception.yaml`:
 
 ``` yaml
 coverage:
@@ -102,7 +102,7 @@ It's never been easier to setup remote codecoverage for your application. In any
 ### Remote Server
 
 But if you run tests on different server (or your webserver doesn't use code from current directory) a single option `remote` should be added to config.
-For example, let's turn on remote coverage for acceptance suite in `acceptance.suite.yml`:
+For example, let's turn on remote coverage for acceptance suite in `acceptance.suite.yaml`:
 
 ``` yaml
 coverage:

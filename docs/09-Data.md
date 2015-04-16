@@ -8,7 +8,7 @@ When we decide to clean up a database, we should make this cleaning as fast as p
 
 ## Automatic Cleanup
 
-Codeception has a `Db` module, which takes on most of the tasks of database interaction. By default it will try to repopulate the database from a dump and clean it up after each test. This module expects a database dump in SQL format. It's already prepared for configuration in `codeception.yml`:
+Codeception has a `Db` module, which takes on most of the tasks of database interaction. By default it will try to repopulate the database from a dump and clean it up after each test. This module expects a database dump in SQL format. It's already prepared for configuration in `codeception.yaml`:
 
 ```yaml
 modules:
@@ -39,7 +39,7 @@ If your application is using an ORM like Doctrine or Doctrine2, connect the resp
 
 An ORM module can be connected with a `Db` module, but by default both will perform cleanup. Thus you should explicitly set which module is used:
 
-In `tests/functional.suite.yml`:
+In `tests/functional.suite.yaml`:
 
 ```yaml
 modules:

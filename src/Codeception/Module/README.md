@@ -47,7 +47,7 @@ $I->seePrice('gin', '9.9');
 $price = $I->grabPriceFor('gin');
 ```
 
-2. Configuration parameters are set in `.suite.yml` config and stored in `config` property array of a module. All default values can be set there as well. Required parameters should be set in `requiredFields` property. 
+2. Configuration parameters are set in `.suite.yaml` config and stored in `config` property array of a module. All default values can be set there as well. Required parameters should be set in `requiredFields` property. 
 
 ```php
 <?php

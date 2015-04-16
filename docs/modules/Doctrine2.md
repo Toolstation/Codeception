@@ -27,7 +27,7 @@ It can be done in bootstrap file, by setting static $em property:
 * auto_connect: true - tries to get EntityManager through connected frameworks. If none found expects the $em values specified as described above.
 * cleanup: true - all doctrine queries will be run in transaction, which will be rolled back at the end of test.
 
- ### Example (`functional.suite.yml`)
+ ### Example (`functional.suite.yaml`)
 
      modules:
         enabled: [Doctrine2]

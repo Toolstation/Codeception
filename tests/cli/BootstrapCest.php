@@ -6,7 +6,7 @@ class BootstrapCest
     {
         $I->amInPath('tests/data/sandbox/tests/_data/');
         $I->executeCommand('bootstrap');
-        $I->seeFileFound('codeception.yml');
+        $I->seeFileFound('codeception.yaml');
         $this->checkFilesCreated($I);
         $I->seeInShellOutput('Building Actor classes for suites');
     }
@@ -17,7 +17,7 @@ class BootstrapCest
         $I->executeCommand('bootstrap --namespace Generated');
 
         $I->seeInShellOutput('Building Actor classes for suites');
-        $I->seeFileFound('codeception.yml');
+        $I->seeFileFound('codeception.yaml');
         $I->seeInThisFile('namespace: Generated');
         $I->dontSeeInThisFile('namespace Generated\\');
         $this->checkFilesCreated($I);
@@ -39,7 +39,7 @@ class BootstrapCest
     public function bootstrapCompatibilityProject(\CliGuy $I) {
         $I->amInPath('tests/data/sandbox/tests/_data/');
         $I->executeCommand('bootstrap --compat');
-        $I->seeFileFound('codeception.yml');
+        $I->seeFileFound('codeception.yaml');
         $this->checkCompatFilesCreated($I);
         $I->seeInShellOutput('Building Actor classes for suites');
     }
@@ -50,7 +50,7 @@ class BootstrapCest
         $I->executeCommand('bootstrap --namespace Generated --compat');
 
         $I->seeInShellOutput('Building Actor classes for suites');
-        $I->seeFileFound('codeception.yml');
+        $I->seeFileFound('codeception.yaml');
         $I->seeInThisFile('namespace: Generated');
         $I->dontSeeInThisFile('namespace Generated\\');
         $this->checkCompatFilesCreated($I);
@@ -69,9 +69,9 @@ class BootstrapCest
         $I->seeDirFound('tests/_output');
 
 
-        $I->seeFileFound('functional.suite.yml','tests');
-        $I->seeFileFound('acceptance.suite.yml','tests');
-        $I->seeFileFound('unit.suite.yml','tests');
+        $I->seeFileFound('functional.suite.yaml','tests');
+        $I->seeFileFound('acceptance.suite.yaml','tests');
+        $I->seeFileFound('unit.suite.yaml','tests');
 
         $I->seeFileFound('_bootstrap.php','tests/acceptance');
         $I->seeFileFound('_bootstrap.php','tests/functional');
@@ -93,9 +93,9 @@ class BootstrapCest
         $I->seeDirFound('tests/_data');
         $I->seeDirFound('tests/_helpers');
 
-        $I->seeFileFound('functional.suite.yml','tests');
-        $I->seeFileFound('acceptance.suite.yml','tests');
-        $I->seeFileFound('unit.suite.yml','tests');
+        $I->seeFileFound('functional.suite.yaml','tests');
+        $I->seeFileFound('acceptance.suite.yaml','tests');
+        $I->seeFileFound('unit.suite.yaml','tests');
 
         $I->seeFileFound('_bootstrap.php','tests/acceptance');
         $I->seeFileFound('_bootstrap.php','tests/functional');
@@ -108,6 +108,6 @@ class BootstrapCest
         $I->seeFileFound('WebHelper.php','tests/_helpers');
         $I->seeFileFound('TestHelper.php','tests/_helpers');
         $I->seeFileFound('CodeHelper.php','tests/_helpers');
-    }        
+    }
 
 }

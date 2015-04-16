@@ -20,7 +20,7 @@ use Symfony\Component\Yaml\Yaml;
  *
  * For Codeception 1.x compatible setup run bootstrap in `--compat` option.
  *
- * * `codecept bootstrap` - creates `tests` dir and `codeception.yml` in current dir.
+ * * `codecept bootstrap` - creates `tests` dir and `codeception.yaml` in current dir.
  * * `codecept bootstrap --customize` - set manually actors and suite names during setup
  * * `codecept bootstrap --compat` - prepare Codeception 1.x setup with Guy classes.
  * * `codecept bootstrap --namespace Frontend` - creates tests, and use `Frontend` namespace for actor classes and helpers.
@@ -71,7 +71,7 @@ class Bootstrap extends Command
         $realpath = realpath($path);
         chdir($path);
 
-        if (file_exists('codeception.yml')) {
+        if (file_exists('codeception.yaml')) {
             $output->writeln("<error>\nProject is already initialized in '$path'\n</error>");
             return;
         }
@@ -79,7 +79,7 @@ class Bootstrap extends Command
         $output->writeln(
             "<fg=white;bg=magenta>Initializing Codeception in " . $realpath . "</fg=white;bg=magenta>\n"
         );
-        
+
         if ($input->getOption('compat')) {
             $this->compatibilitySetup($output);
         } elseif ($input->getOption('customize')) {
@@ -131,7 +131,7 @@ class Bootstrap extends Command
         if ($this->namespace) {
             $str = "namespace: {$this->namespace} \n" . $str;
         }
-        file_put_contents('codeception.yml', $str);
+        file_put_contents('codeception.yaml', $str);
     }
 
     protected function createFunctionalSuite($actor = 'Functional')
@@ -182,7 +182,7 @@ class Bootstrap extends Command
         $str = "# Codeception Test Suite Configuration\n\n";
         $str .= "# suite for unit (internal) tests.\n";
         $str .= Yaml::dump($suiteConfig, 2);
-        
+
         $this->createSuite('unit', $actor, $str);
     }
 
@@ -198,7 +198,7 @@ class Bootstrap extends Command
             $this->helperDir.DIRECTORY_SEPARATOR.$actor.'Helper.php',
             (new Helper($actor, $this->namespace))->produce()
         );
-        file_put_contents("tests/$suite.suite.yml", $config);
+        file_put_contents("tests/$suite.suite.yaml", $config);
     }
 
     protected function ignoreFolderContent($path)
@@ -219,19 +219,19 @@ class Bootstrap extends Command
         $this->helperDir = 'tests/_helpers';
 
         $this->createGlobalConfig();
-        $output->writeln("File codeception.yml created       <- global configuration");
+        $output->writeln("File codeception.yaml created       <- global configuration");
 
         $this->createDirs();
 
         $this->createUnitSuite('Code');
         $output->writeln("tests/unit created                 <- unit tests");
-        $output->writeln("tests/unit.suite.yml written       <- unit tests suite configuration");
+        $output->writeln("tests/unit.suite.yaml written       <- unit tests suite configuration");
         $this->createFunctionalSuite('Test');
         $output->writeln("tests/functional created           <- functional tests");
-        $output->writeln("tests/functional.suite.yml written <- functional tests suite configuration");
+        $output->writeln("tests/functional.suite.yaml written <- functional tests suite configuration");
         $this->createAcceptanceSuite('Web');
         $output->writeln("tests/acceptance created           <- acceptance tests");
-        $output->writeln("tests/acceptance.suite.yml written <- acceptance tests suite configuration");
+        $output->writeln("tests/acceptance.suite.yaml written <- acceptance tests suite configuration");
 
         $this->ignoreFolderContent('tests/_log');
     }
@@ -242,18 +242,18 @@ class Bootstrap extends Command
     protected function setup(OutputInterface $output)
     {
         $this->createGlobalConfig();
-        $output->writeln("File codeception.yml created       <- global configuration");
+        $output->writeln("File codeception.yaml created       <- global configuration");
 
         $this->createDirs();
         $this->createUnitSuite();
         $output->writeln("tests/unit created                 <- unit tests");
-        $output->writeln("tests/unit.suite.yml written       <- unit tests suite configuration");
+        $output->writeln("tests/unit.suite.yaml written       <- unit tests suite configuration");
         $this->createFunctionalSuite();
         $output->writeln("tests/functional created           <- functional tests");
-        $output->writeln("tests/functional.suite.yml written <- functional tests suite configuration");
+        $output->writeln("tests/functional.suite.yaml written <- functional tests suite configuration");
         $this->createAcceptanceSuite();
         $output->writeln("tests/acceptance created           <- acceptance tests");
-        $output->writeln("tests/acceptance.suite.yml written <- acceptance tests suite configuration");
+        $output->writeln("tests/acceptance.suite.yaml written <- acceptance tests suite configuration");
 
         $this->ignoreFolderContent('tests/_output');
     }
@@ -268,12 +268,12 @@ class Bootstrap extends Command
         $this->actorSuffix = $dialog->ask($output,
             "<question> Enter default actor name </question> Proposed: <info>Tester</info>; Formerly: Guy\n",
             'Tester'
-        );              
+        );
 
         $output->writeln("Basic Actor is set to: <info>{$this->actorSuffix}</info>");
 
         $this->createGlobalConfig();
-        $output->writeln("File codeception.yml created <- global configuration");
+        $output->writeln("File codeception.yaml created <- global configuration");
 
         $this->createDirs();
 

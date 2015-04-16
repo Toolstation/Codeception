@@ -488,7 +488,7 @@ By default it will create 3 suites **acceptance**, **functional**, and **unit**.
 
 For Codeception 1.x compatible setup run bootstrap in `--compat` option.
 
-* `codecept bootstrap` - creates `tests` dir and `codeception.yml` in current dir.
+* `codecept bootstrap` - creates `tests` dir and `codeception.yaml` in current dir.
 * `codecept bootstrap --customize` - set manually actors and suite names during setup
 * `codecept bootstrap --compat` - prepare Codeception 1.x setup with Guy classes.
 * `codecept bootstrap --namespace Frontend` - creates tests, and use `Frontend` namespace for actor classes and helpers.

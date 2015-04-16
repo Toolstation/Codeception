@@ -37,7 +37,7 @@ use GuzzleHttp\Client;
  * * .. those and other [Guzzle Request options](http://docs.guzzlephp.org/en/latest/clients.html#request-options)
  *
  *
- * ### Example (`acceptance.suite.yml`)
+ * ### Example (`acceptance.suite.yaml`)
  *
  *     modules:
  *        enabled: [PhpBrowser]
@@ -99,11 +99,11 @@ class PhpBrowser extends InnerBrowser implements Remote, MultiSession
     {
         $this->client->setHeader($header, $value);
     }
-    
+
     public function amHttpAuthenticated($username, $password)
     {
         $this->client->setAuth($username, $password);
-    }    
+    }
 
     public function amOnSubdomain($subdomain)
     {

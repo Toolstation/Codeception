@@ -14,7 +14,7 @@ We will put all the api tests there.
 
 The REST web service is accessed via HTTP with standard methods: `GET`, `POST`, `PUT`, `DELETE`. They allow to receive and manipulate entities from the service. Accessing WebService requires HTTP client, so for using it you need the module `PhpBrowser` or one of framework modules set up. For example, we can use the `Symfony2` module for Symfony2 applications in order to ignore web server and test web service internally.
 
-Configure modules in `api.suite.yml`:
+Configure modules in `api.suite.yaml`:
 
 ``` yaml
 class_name: ApiTester

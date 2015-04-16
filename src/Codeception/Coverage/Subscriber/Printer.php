@@ -56,7 +56,7 @@ class Printer implements EventSubscriberInterface {
         }
         $printer = $e->getPrinter();
         if (!$this->settings['enabled']) {
-            $printer->write("\nCodeCoverage is disabled in `codeception.yml` config\n");
+            $printer->write("\nCodeCoverage is disabled in `codeception.yaml` config\n");
             return;
         }
 

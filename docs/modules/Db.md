@@ -6,7 +6,7 @@
 Works with SQL database.
 
 The most important function of this module is cleaning database before each test.
-That's why this module was added into global configuration file: codeception.yml.
+That's why this module was added into global configuration file: codeception.yaml.
 To have your database properly cleaned you should configure it to access the database.
 Also provides actions to perform checks in database.
 

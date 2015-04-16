@@ -37,7 +37,7 @@ PhantomJS is headless alternative to Selenium Server.
 * wait - set the implicit wait (0 secs) by default.
 * capabilities - sets Selenium2 [desired capabilities](http://code.google.com/p/selenium/wiki/DesiredCapabilities). Should be a key-value array.
 
-### Example (`acceptance.suite.yml`)
+### Example (`acceptance.suite.yaml`)
 
     modules:
        enabled: [WebDriver]

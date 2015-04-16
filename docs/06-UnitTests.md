@@ -58,7 +58,7 @@ This class has predefined `_before` and `_after` methods to start with. You can 
 
 As you see, unlike in PHPUnit, `setUp` and `tearDown` methods are replaced with their aliases: `_before`, `_after`.
 
-The actual `setUp` and `tearDown` were implemented by parent class `\Codeception\TestCase\Test` and set up the UnitTester class to have all the cool actions from Cept-files to be run as a part of unit tests. Just like in acceptance and functional tests you can choose the proper modules for `UnitTester` class in `unit.suite.yml` configuration file.
+The actual `setUp` and `tearDown` were implemented by parent class `\Codeception\TestCase\Test` and set up the UnitTester class to have all the cool actions from Cept-files to be run as a part of unit tests. Just like in acceptance and functional tests you can choose the proper modules for `UnitTester` class in `unit.suite.yaml` configuration file.
 
 
 ```yaml

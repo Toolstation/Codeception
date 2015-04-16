@@ -12,7 +12,7 @@ This module provides integration with [Yii framework](http://www.yiiframework.co
 
 The entry script must return the application configuration array.
 
-You can use this module by setting params in your functional.suite.yml:
+You can use this module by setting params in your functional.suite.yaml:
 <pre>
 class_name: TestGuy
 modules:
